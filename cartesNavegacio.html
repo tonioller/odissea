@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oracle de Delfos</title>
+ <meta charset="UTF-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+ <link rel="stylesheet" href="css/styles.css"/>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+</head>
+<body>
+	<h1><a href="https://ca.wikipedia.org/wiki/Oracle_de_Delfos">Oracle de Delfos</a></h1>	
+<br>
+<h2>Cartes de navegaci&oacute;</h2>
+
+ <div id="mapid"></div>
+
+<script type="text/javascript">
+    var mymap = L.map('mapid').setView([41.27551, 1.98721], 17);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoicHJldmVvIiwiYSI6ImNrYzllNmszeTEzc2cycHBobDNzNGV4N3gifQ.uRNLcGUqU8fjF4XZXt06Ew'
+    }).addTo(mymap);
+
+    var markerEETAC = L.marker([41.27551, 1.98721]).addTo(mymap);
+    markerEETAC.bindPopup("<b>Hola pitonisos... estem a l'EETAC!").openPopup();
+
+    var markerICFO = L.marker([41.275319, 1.989448]).addTo(mymap);
+    markerICFO.bindPopup("<b>ICFO. Vols teletransportar-te?</b><br></br><a href='https://www.icfo.eu/' target='_blank'>vine</a>");
+
+    var markerEstany = L.marker([41.273343, 1.983998]).addTo(mymap);
+    markerEstany.bindPopup("<b>Vigila amb les sirenes i les tortugues americanes!!!!");
+
+    var markerHort = L.marker([41.277084, 1.986766]).addTo(mymap);
+    markerHort.bindPopup("<b>Aquí podràs trobar menjar amb abundància. Però vigila amb Cyclops !!!!!!!")
+
+    var markerTroia = L.marker([41.2756601, 1.985242]).addTo(mymap);
+    markerTroia.bindPopup("<b>Troia. Deien que era inexpugnable, fins que vam venir!!!");
+
+    var markerItaca = L.marker([41.274375, 1.985275]).addTo(mymap);
+    markerItaca.bindPopup("<b>Biblioteca d'Alexandria. Tot el coneixement de la humanitat està allà");
+
+
+    var markerDronLab = L.marker([41.27519, 1.987088]).addTo(mymap);
+    markerDronLab.bindPopup("<b>Icar. El vol del dron!!!");
+
+//    function onMapClick(e) {
+//        alert("You clicked the map at " + e.latlng);
+//    }
+
+//    mymap.on('click', onMapClick);
+</script>
+ 
+</body>
+</html>
